@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="{% static 'css/weather.css' %}">
+</head>
+<body>
+    <form method="post" action="{% url 'home' %}">
+        {% csrf_token %}
+        <div class="container">
+            <h1 class="title">Weather App</h1>
+            <div class="search-box">
+                <!-- Missing name attribute -->
+                <input type="text" id="location-input" name="location" placeholder="Enter a city or place" required>
+                <button type="submit" id="search-button">Search</button>
+            </div>
+            {% if weather_data %}
+            <div class="weather-result">
+                <h2>{{ weather_data.location }}</h2>
+                <img src="http://openweathermap.org/img/wn/{{ weather_data.icon }}@2x.png" alt="Weather icon" class="weather-icon">
+                <h1>{{ weather_data.temp }}°C</h1>
+                <h3>{{ weather_data.description }}</h3>
+            </div>
+            {% elif error %}
+            <p class="error">{{ error }}</p>
+            {% endif %}
+        </div>
+    </form>
+</body>
+</html>

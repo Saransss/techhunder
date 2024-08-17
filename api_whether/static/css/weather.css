@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 600px; /* Limits container width on larger screens */
+    width: 90%; /* Ensures proper width on mobile */
+}
+
+.title {
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#location-input {
+    padding: 10px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    width: 100%; /* Full width on mobile */
+    margin-right: 10px;
+    transition: width 0.4s ease-in-out;
+    max-width: 300px; /* Limits max width on larger screens */
+}
+
+#location-input:focus {
+    width: 100%; /* Full width on focus */
+}
+
+#search-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #2575fc;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#search-button:hover {
+    background-color: #6a11cb;
+}
+
+.weather-result {
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+.fade-in {
+    animation: fadeIn ease 1.5s;
+    -webkit-animation: fadeIn ease 1.5s;
+    -moz-animation: fadeIn ease 1.5s;
+    -o-animation: fadeIn ease 1.5s;
+    -ms-animation: fadeIn ease 1.5s;
+}
+
+@keyframes fadeIn {
+    0% { opacity:0; }
+    100% { opacity:1; }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .search-box {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center;
+    }
+
+    #location-input {
+        width: 100%; /* Full width on mobile */
+        margin-bottom: 10px; /* Adds spacing */
+    }
+
+    #search-button {
+        width: 50%; /* Full width on mobile */
+    }
+
+    .title {
+        font-size: 1.5em; /* Adjusts title size */
+    }
+
+    .weather-result {
+        font-size: 1em; /* Adjusts result font size */
+    }
+}
