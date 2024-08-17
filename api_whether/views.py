@@ -7,12 +7,10 @@ def home(request):
 
     if request.method == "POST":
         location = request.POST.get('location')
-        api_key = '47e7a962e49319b088a423de9c62b238'  # Your API Key
+        api_key = '47e7a962e49319b088a423de9c62b238' 
         
-        # OpenWeatherMap API URL
         url = f"http://api.openweathermap.org/data/2.5/weather?q={location}&units=metric&appid={api_key}"
 
-        # API Call
         response = requests.get(url)
         data = response.json()
 
