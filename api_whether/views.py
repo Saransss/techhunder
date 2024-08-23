@@ -1,7 +1,7 @@
 import requests
 from django.conf import settings
 from django.shortcuts import render
-def home(request):
+def index(request):
     weather_data = None
     error = None
 
@@ -24,4 +24,4 @@ def home(request):
         else:
             error = "Location not found or API Error."
 
-    return render(request, 'home.html', {'weather_data': weather_data, 'error': error})
+    return render(request, 'index.html', {'weather_data': weather_data, 'error': error})
