@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{% static 'css/weather.css' %}">
 </head>
 <body>
-    <form method="post" action="{% url 'home' %}">
+    <form method="post" action="{% url 'index' %}">
         {% csrf_token %}
         <div class="container">
             <h1 class="title">Weather App</h1>
